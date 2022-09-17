@@ -7,6 +7,7 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
+    - "vendor/bundle/**/*"
 
   DisplayCopNames: true
 
@@ -25,7 +26,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  IgnoredMethods: ['describe']
+  AllowedMethods: ['describe']
   Max: 30
 
 Style/Documentation:
@@ -48,8 +49,6 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
-Layout/EndOfLine:
-  EnforcedStyle: lf
 Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
@@ -60,5 +59,3 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Style/EndOfLine:
-  EnforcedStyle: lf
