@@ -9,7 +9,7 @@ development:
   database: Rails_Blog_development
   encoding: unicode
   pool: 5
-  
+
   username: postgres
   password: abc123
 
