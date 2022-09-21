@@ -18,7 +18,6 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-
   describe 'GET /show' do
     it 'returns http success' do
       get '/users/show'
@@ -35,5 +34,4 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('Here is a USERS by ID')
     end
   end
-
 end

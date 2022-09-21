@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-
   describe 'GET /index' do
     it 'returns http success' do
       get '/posts/index'
@@ -18,7 +17,6 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Here are the list of POSTS')
     end
   end
-
 
   describe 'GET /show' do
     it 'returns http success' do
