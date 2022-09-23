@@ -1,1 +1,35 @@
 <h1>Here is a USERS by ID</h1>
+
+<div class="each_user_container">
+
+  <div class="container">
+    <img class="user_photo" src="<%= @user.photo %>" alt="">
+    <div class="user_container">
+      <h1 class="user_name"><%= @user.name %></h1>
+      <p class="user_posts">Number of posts: <%= @user.posts.count %></p>
+    </div>
+  </div>
+
+  <div class="bio_container">
+    <h1 class="bio">Bio</h1>
+    <p class="bio_details"><%= @user.bio %></p>
+  </div>
+
+  <% @user.recent_three_posts.each_with_index do |post, index| %>
+
+    <div class="posts_container">
+      <h1>Post #<%= "#{index + 1}" %></h1>
+      <p><%= post.text %></p>
+      <div class="cl_container">
+        <p>Comments: <%= post.comments_counter %></p>
+        <p>Likes: <%= post.likes_counter %></p>
+      </div>
+    </div>
+
+  <% end %>
+
+  <%= link_to("/users/#{@user.id}/posts") do%>
+    <button class="all_posts">Show all Posts</button>
+  <% end %>
+
+</div>
