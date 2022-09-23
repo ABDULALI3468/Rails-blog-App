@@ -29,7 +29,6 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  width: 350px;
   border: 2px solid pink;
   width: 100%;
 }
@@ -70,10 +69,6 @@ body {
 .bio {
   justify-self: flex-start;
   align-self: flex-start;
-}
-
-.bio_details {
-
 }
 
 /* POSTS */
