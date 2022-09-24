@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
-  before_action :fetch_author
-
   def index
-    @posts = @author.posts
+    @user = User.find(params[:authorId])
+    @posts = @user.posts
   end
 
   def show
-    @post = @author.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
@@ -24,12 +23,7 @@ class PostsController < ApplicationController
     end
   end
 
-  private
-
-  def fetch_author
-    @author = User.find(params[:user_id])
-  end
-
+  private 
   def post_params
     params.require(:post).permit(:title, :text)
   end

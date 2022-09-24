@@ -1,30 +1,19 @@
-<h1>Here are the specific Post for Specific USER</h1>
+<p><%= @post.title %> by <%= @post.user.name%></p>
+<p>Comments: <span><%= @post.comments.count %></span>, Likes: <span><%= @post.likes.count %></span></p>
 
-<div class="posts_container">
-  <h1>Post #<%= "#{@post.id}" %></h1>
-  <p><%= @post.text %></p>
-
-  <%= form_with model: Like, url: post_likes_path(@post.user, @post), method: :post do |form| %>
+<%= @post.text %>
+    <%= form_with model: Like, url: post_likes_path(@post.user, @post), method: :post do |form| %>
     <% form.submit "Like" %>
-  <% end %>
+<% end %>
 
-  <div class="cl_container">
-    <p>Comments: <%= @post.comments_counter %></p>
-    <p>Likes: <%= @post.likes_counter %></p>
-  </div>
-</div>
-<div class="comments">
-  <% @post.comments.each_with_index do |comment, index| %>
-    <p>By<%= comment.author.name%>:-- <%= comment.text %></p>
-  <% end %>
-</div>
-
+<% if @post.comments.length > 0 %>
+    <% @post.comments.each do |comment| %>
+    <p><%= comment.user.name %> : <%= comment.text %></p>
+<% end %>
+    <% else %>
+    <p>There are no comments !!</p>
+<% end %>
 <div>
     <h3>Add a comment</h3>
     <%= render partial: 'partials/_new' %>
 </div>
-
-
-
-
-
