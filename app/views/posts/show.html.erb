@@ -3,6 +3,11 @@
 <div class="posts_container">
   <h1>Post #<%= "#{@post.id}" %></h1>
   <p><%= @post.text %></p>
+
+  <%= form_with model: Like, url: post_likes_path(@post.user, @post), method: :post do |form| %>
+    <% form.submit "Like" %>
+  <% end %>
+
   <div class="cl_container">
     <p>Comments: <%= @post.comments_counter %></p>
     <p>Likes: <%= @post.likes_counter %></p>
@@ -13,3 +18,13 @@
     <p>By<%= comment.author.name%>:-- <%= comment.text %></p>
   <% end %>
 </div>
+
+<div>
+    <h3>Add a comment</h3>
+    <%= render partial: 'partials/_new' %>
+</div>
+
+
+
+
+
