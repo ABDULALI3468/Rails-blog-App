@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
-    it 'returns http success' do
+    it 'Return http success' do
       get '/posts/index'
       expect(response).to have_http_status(:success)
     end
@@ -14,12 +14,12 @@ RSpec.describe 'Posts', type: :request do
 
     it 'Should include the correct placeholder' do
       get '/posts/index'
-      expect(response.body).to include('Here are the list of POSTS')
+      expect(response.body).to include('All posts here')
     end
   end
 
   describe 'GET /show' do
-    it 'returns http success' do
+    it 'Return http success' do
       get '/posts/show'
       expect(response).to have_http_status(:success)
     end
@@ -31,7 +31,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'Should include the correct placeholder' do
       get '/posts/show'
-      expect(response.body).to include('Here are the list of POSTS for specific USER')
+      expect(response.body).to include('Single user posts')
     end
   end
 end

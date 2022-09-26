@@ -1,17 +1,30 @@
 class PostsController < ApplicationController
-  before_action :fetch_author
-
   def index
-    @posts = @author.posts
+    @user = User.find(params[:authorId])
+    @posts = @user.posts
   end
 
   def show
-    @post = @author.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
-  private
+  def create
+    @post = Post.create(post_params)
+    @post.user = current_user
+    respond_to do |format|
+      format.html do
+        if @post.save
+          flash[:success] = 'New Post created successfully'
+          redirect_to user_posts_path(current_user)
+        else
+          flash.now[:error] = 'An error occurred : Post could not be created'
+        end
+      end
+    end
+  end
 
-  def fetch_author
-    @author = User.find(params[:user_id])
+  private 
+  def post_params
+    params.require(:post).permit(:title, :text)
   end
 end
