@@ -6,8 +6,8 @@
     <% form.submit "Like" %>
 <% end %>
 
-<% if @post.comments.length > 0 %>
-    <% @post.comments.each do |comment| %>
+<% if @comments.length > 0 %>
+    <% @comments.each do |comment| %>
     <p><%= comment.user.name %> : <%= comment.text %></p>
 <% end %>
     <% else %>
