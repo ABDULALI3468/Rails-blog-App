@@ -13,3 +13,88 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.users {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border: 2px solid pink;
+  width: 100%;
+}
+
+.user_photo {
+  width: 100px;
+  height: 100px;
+}
+
+.user_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user_posts {
+  align-self: flex-end;
+}
+
+/* BIO  */
+.each_user_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  border: 2px solid pink;
+}
+
+.bio_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink;
+}
+
+.bio {
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+
+/* POSTS */
+
+.posts_container {
+  border: 2px solid pink;
+}
+
+.cl_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 5rem;
+}
+
+.cl_container p {
+  margin-left: 1rem;
+}
+
+.all_posts {
+  background-color: blueviolet;
+  color: pink;
+  height: 3rem;
+  border: 2px solid pink;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-radius: 20%;
+  box-shadow: 0 0 10px 10px pink;
+}

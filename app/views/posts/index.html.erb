@@ -1,1 +1,38 @@
-<h1>Here are the list of POSTS</h1>
+<h1>Here are the list of POSTS by Specific user</h1>
+
+
+<div class="each_user_container">
+
+  <div class="container">
+    <img class="user_photo" src="<%= @author.photo %>" alt="">
+    <div class="user_container">
+      <h1 class="user_name"><%= @author.name %></h1>
+      <p class="user_posts">Number of posts: <%= @author.posts.count %></p>
+    </div>
+  </div>
+
+
+  <% @posts.each_with_index do |post, index| %>
+
+      <div class="posts_container">
+    <%= link_to("/users/#{@author.id}/posts/#{post.id}") do%>
+        <h1>Post #<%= "#{index + 1}" %></h1>
+    <% end %>
+        <p><%= post.text %></p>
+        <div class="cl_container">
+          <p>Comments: <%= post.comments_counter %></p>
+          <p>Likes: <%= post.likes_counter %></p>
+        </div>
+      </div>
+      <div class="comments">
+        <% post.recent_five_comments.each_with_index do |comment, index| %>
+          <p>By<%= comment.author.name%>:-- <%= comment.text %></p>
+        <% end %>
+      </div>
+
+  <% end %>
+
+
+  <button class="all_posts">Pagination</button>
+
+</div>
