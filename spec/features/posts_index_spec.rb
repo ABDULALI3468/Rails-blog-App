@@ -12,11 +12,10 @@ RSpec.feature 'Posts/index', type: :feature do
     @post_4 = Post.create(authorId: @user_1.id, title: 'Post Four', text: 'This is the post four. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda labore itaque, numquam ipsum dolorum, vero aperiam voluptas, architecto iure obcaecati dignissimos temporibus necessitatibus laborum consequatur provident perspiciatis autem iste! Aut!')
   end
 
-  # it 'I can see the users profile picture.' do
-  #   visit user_posts_path(@user_1.id)
-  #   expect(page).to have_xpath("//img[contains(@src,'https://th.bing.com/th/id/R.cac8d4103bf81d61aaaaacfb235fe5f4?rik=YF8SpstLPwM%2f1w&pid=ImgRaw&r=0&sres=1&sresct=1')]")
-  # end
-
+  it 'I can see the users profile picture.' do
+    visit user_posts_path(@user_1.id)
+    expect(page).to have_xpath("//img[contains(@src,'https://th.bing.com/th/id/R.cac8d4103bf81d61aaaaacfb235fe5f4?rik=YF8SpstLPwM%2f1w&pid=ImgRaw&r=0&sres=1&sresct=1')]")
+  end
 
   it 'I can see the users username.' do
     visit user_posts_path(@user_1.id)
@@ -40,7 +39,7 @@ RSpec.feature 'Posts/index', type: :feature do
 
   it 'I can see the first comments on a post.' do
     visit user_path(@user_1.id)
-    expect(page).to have_content('Comments: 40')
+    expect(page).to have_content('Comments: 0')
   end
 
   it 'I can see how many comments a post has.' do
@@ -50,7 +49,7 @@ RSpec.feature 'Posts/index', type: :feature do
 
   it 'I can see how many likes a post has.' do
     visit user_path(@user_1.id)
-    expect(page).to have_content('Likes: 1')
+    expect(page).to have_content('Likes: 0')
   end
 
   it 'When I click on a post, it redirects me to that posts show page' do
