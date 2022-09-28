@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 # gem 'bullet', '~> 6.1.0'
+
 gem 'json', '2.3'
 gem 'tzinfo-data'
 gem 'bootstrap', '~> 5.1.3'
@@ -61,11 +62,8 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
-  gem 'database_cleaner'
 end
 
-gem 'bullet', group: 'development'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -80,8 +78,10 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'rspec-rails'
+  gem "database_cleaner"
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
   gem 'webdrivers'
+
 end
