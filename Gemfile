@@ -4,10 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 # gem 'bullet', '~> 6.1.0'
 
-gem 'json', '2.3'
-gem 'tzinfo-data'
 gem 'bootstrap', '~> 5.1.3'
 gem 'erb-formatter'
+gem 'json', '2.3'
+# gem 'tzinfo-data'
 # Linter runner
 gem 'ffi'
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -64,7 +64,6 @@ group :development, :test do
   gem 'rails-controller-testing'
 end
 
-
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
@@ -78,10 +77,9 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'rspec-rails'
-  gem "database_cleaner"
   gem 'capybara'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-
 end
