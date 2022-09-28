@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'posts/index'
   get 'posts/show'
   root 'users#index'
-  
+
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :new, :form, :create]
+    resources :posts, only: [:index, :show, :new, :form, :create]
   end
 
   resources :posts do
