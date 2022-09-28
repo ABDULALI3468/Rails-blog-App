@@ -32,7 +32,7 @@ RSpec.feature 'Post/show', type: :feature do
     expect(page).to have_content('Test Name')
   end
 
-  it 'I can see the Post Body.' do
+  it 'I can see the Post body.' do
     visit user_post_path(@user_1.id, @post_1.id)
     expect(page).to have_content('This is the post one')
   end
