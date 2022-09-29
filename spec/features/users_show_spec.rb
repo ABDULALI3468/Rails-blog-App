@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.feature 'User/show', type: :feature do
-  before(:each) do
+  before(:all) do
+    Like.destroy_all
+    Comment.destroy_all
+    Post.destroy_all
+    User.destroy_all
     @user_1 = User.create(name: 'ABDUL ALI',
                           photo: 'https://th.bing.com/th/id/R.cac8d4103bf81d61aaaaacfb235fe5f4?rik=YF8SpstLPwM%2f1w&pid=ImgRaw&r=0&sres=1&sresct=1', bio: 'Teacher from Pakistan')
     @post_1 = Post.create(authorId: @user_1.id, title: 'Post One',
