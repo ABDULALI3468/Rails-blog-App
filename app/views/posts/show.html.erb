@@ -1,3 +1,5 @@
+<%= render "partials/user", user: @user %>
+
 <p><%= @post.title %> by <%= @post.user.name%></p>
 <p>Comments: <span><%= @post.comments.count %></span>, Likes: <span><%= @post.likes.count %></span></p>
 
@@ -6,8 +8,8 @@
     <% form.submit "Like" %>
 <% end %>
 
-<% if @post.comments.length > 0 %>
-    <% @post.comments.each do |comment| %>
+<% if @comments.length > 0 %>
+    <% @comments.each do |comment| %>
     <p><%= comment.user.name %> : <%= comment.text %></p>
 <% end %>
     <% else %>
@@ -15,5 +17,5 @@
 <% end %>
 <div>
     <h3>Add a comment</h3>
-    <%= render partial: 'partials/_new' %>
+    <%= render partial: 'partials/new' %>
 </div>

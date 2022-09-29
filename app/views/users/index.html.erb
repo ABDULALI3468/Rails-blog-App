@@ -1,3 +1,5 @@
 <% @users.each do |user| %>
-    <%= render partial: 'partials/user', locals: {user: user} %>    
+    <%= link_to "/users/#{user.id}" do%>
+        <%= render partial: 'partials/user', locals: {user: user} %>
+    <% end  %>
 <% end %>

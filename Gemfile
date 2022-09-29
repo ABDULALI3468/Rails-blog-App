@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
-gem 'json', '2.3'
-gem 'tzinfo-data'
+# gem 'bullet', '~> 6.1.0'
+
 gem 'bootstrap', '~> 5.1.3'
 gem 'erb-formatter'
+gem 'json', '2.3'
+# gem 'tzinfo-data'
 # Linter runner
 gem 'ffi'
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -60,7 +62,6 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
 end
 
 group :development do
@@ -77,7 +78,8 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
   gem 'webdrivers'
 end
