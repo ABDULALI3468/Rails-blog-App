@@ -1,3 +1,5 @@
+<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+
 <% @users.each do |user| %>
     <%= link_to "/users/#{user.id}" do%>
         <%= render partial: 'partials/user', locals: {user: user} %>
