@@ -11,6 +11,11 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :postsCounter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  def default_values
+    self.posts_counter = 0
+    self.photo = 'https://img.myloview.com/posters/social-media-user-icon-default-avatar-profile-image-400-251200036.jpg'
+  end
+
   def recent_post
     posts.order(created_at: :desc).limit(3)
   end
