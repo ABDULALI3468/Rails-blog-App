@@ -5,6 +5,7 @@ ruby '3.1.2'
 # gem 'bullet', '~> 6.1.0'
 
 gem 'bootstrap', '~> 5.1.3'
+gem 'devise'
 gem 'erb-formatter'
 gem 'json', '2.3'
 # gem 'tzinfo-data'
