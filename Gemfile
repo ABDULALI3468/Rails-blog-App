@@ -6,6 +6,7 @@ ruby '3.1.2'
 
 gem 'bootstrap', '~> 5.1.3'
 gem 'devise'
+gem 'cancancan'
 gem 'erb-formatter'
 gem 'json', '2.3'
 # gem 'tzinfo-data'
